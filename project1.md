@@ -96,7 +96,7 @@ Your solution must maintain a thread-safe data structure to store the history of
   * `-user <username>` - The username that will be used for your client.
   * `-port <port>` - The port on which your server will listen.
 
-Your program *must* run exactly as follows:
+Your program *must* run exactly as follows, where name and 9900 will be replaced with appropriate values:
 ```
 java -jar project1.jar cs682.Chat -user name -port 9900
 ```

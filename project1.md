@@ -1,7 +1,5 @@
-Project 1 - Chat Application
+Project 1 - Distributed Chat Application
 ============================
-
-*This project description is incomplete and subject to change! Proceed at your own risk.*
 
 ### Demonstration Due - Tuesday, Feb 6 - start of class
 ### Code Due - Wednesday, Feb 7 - 5PM

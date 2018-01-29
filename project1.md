@@ -103,7 +103,7 @@ java -jar project1.jar cs682.Chat -user name -port 9900
 
 There will be two deadlines for this assignment.
 
-By **Tuesday, Feb 6** at the *beginning* of class you must be prepared to demonstrate your working solution on the CS microcloud. Node and port assignments will be posted soon. For full demonstration credit your solution must be completely interoperable with the correct solution and the solution of any other student who also has a correct solution.
+By **Tuesday, Feb 6** at the *beginning* of class you must be prepared to demonstrate your working solution on the CS microcloud. When testing or running during demonstration please use only your [assigned microcloud node(s) and port(s)](https://github.com/CS682-S18/notes/blob/master/microcloud.md). For full demonstration credit your solution must be completely interoperable with the correct solution and the solution of any other student who also has a correct solution.
 
 By **Wednesday, Feb 7** at 5PM you must submit all code and a jar file to your github repository for this assignment. Your jar file *must* be in a `lib` directory under your top-level repo directory and it *must* be named `project1.jar`. 
 

@@ -96,7 +96,7 @@ Your solution must maintain a thread-safe data structure to store the history of
 
 Your program *must* run exactly as follows, where name and 9900 will be replaced with appropriate values:
 ```
-java -jar project1.jar cs682.Chat -user name -port 9900
+java -cp project1.jar cs682.Chat -user name -port 9900
 ```
 
 ### Submission Requirements

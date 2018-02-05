@@ -1,11 +1,8 @@
 Project 2 - Reliable Data Transfer
 ==================================
 
-<!--### Demonstration Due - Tuesday, Feb 6 - start of class
-### Code Due - Wednesday, Feb 7 - 5PM
--->
-
-*Note, this project description is incomplete and WILL CHANGE. Proceed at your own risk.*
+### Demonstration Due - Thursday, Feb 22 - start of class
+### Code Due - Friday, Feb 23 - 5PM
 
 For this project you will extend your Project 1 Chat application to include a UDP client and server to support reliable bulk download of the `History` data structure of another chat peer in the network. You will use the following technologies:
 
@@ -46,7 +43,7 @@ message ZKData {
 
 ### Messaging
 
-Recall that UDP is *connectionless*. This means that you will use **one** UDP socket on each host, and this socket will be used for both sending a receiving messages.
+Recall that UDP is *connectionless*. This means that you will use **one** UDP socket on each host, and this socket will be used for *both sending a receiving messages*.
 
 A host may concurrently be acting as a receiver, for a download request it initiated, or a sender, for one or more requests it has received. Each time a new packet is received you will perform a demultiplexing operation to determine how to handle the incoming packet.
 
@@ -58,7 +55,6 @@ message Data {
     int32 seq_no = 2;
     bytes data = 3;
     bool is_last = 4;
-    int32 count = 5;
 
     enum packetType {
         REQUEST = 0;
@@ -68,11 +64,11 @@ message Data {
 }
 ```
 
-**REQUEST** - A message with type REQUEST is the initial message that will begin a new download operation. You will need to get the IP and port of the requester from the `DatagramPacket` and set up internal state to keep track of the in-progress download. The reply to this message will be the first data packet. No fields other than type will be relevant for this message.
+**REQUEST** - A message with type REQUEST is the initial message that will begin a new download operation. You will need to get the IP and port of the requester from the `DatagramPacket` and set up internal state to keep track of the in-progress download. The reply to this message will be the first data packet. No fields other than `type` will be relevant for this message.
 
-**ACK** - A message with type ACK will acknowledge a correctly received data packet using the seq_no field. You will need to get the IP and port of the requester from the packet; update the sending window for that download as appropriate; and possibly send additional data packets. 
+**ACK** - A message with type ACK will acknowledge a correctly received data packet using the `seq_no` field. You will need to get the IP and port of the requester from the packet; update the sending window for that download as appropriate; and possibly send additional data packets. 
 
-**DATA** - A message with type DATA is a new data packet with sequence number seq_no. If this is the last data packet is_last will be true. As described below, if the seq_no is the expected sequence number the data will be saved and an ACK will be sent in reply. If the data is out of order it will be discarded.
+**DATA** - A message with type DATA is a new data packet with sequence number `seq_no`. If this is the last data packet `is_last` will be `true`. As described below, if the `seq_no` is the expected sequence number the `data` will be saved and an ACK will be sent in reply. If the data is out of order it will be discarded.
 
 ### Data Format and Framing
 
@@ -86,7 +82,7 @@ message History {
 
 The data, however, will be sent in frames of 10 bytes. You will create a byte array of the entire structure and send 10 bytes in each `Packet` as defined above.
 
-The last packet may have fewer than 10 bytes if the entire length of the array is not a multiple of 10. It should be flagged with is_last = true.
+The last packet may have fewer than 10 bytes if the entire length of the array is not a multiple of 10. It should be flagged with `is_last = true`.
 
 ### Reliability
 
@@ -104,8 +100,6 @@ until all DATA packets correctly received
 		save data
 		send ACK for seq_no 
 		increment expected sequence number
-	else
-		send ACK for expected sequence number
 ```
 
 The general algorithm for the sender is as follows:
@@ -127,7 +121,6 @@ on ACK received
 		send new packet(s)
 		start timer
 ```
-
 
 ### Application Execution
 
@@ -160,7 +153,8 @@ For full credit, make sure to follow all [Style Guidelines](https://github.com/C
 | Points | Criterion |
 | ------ | -------- |  
 | 20 | Receiver Implementation | 
-| 10 | Sender Implementation - Framing |
+| 5 | Sender Implementation - Framing |
+| 5 | Sender Implementation - Sockets |
 | 10 | Sender Implementation - Timers |
 | 10 | Sender Implementation - Retransmissions |
 | 5 | Node Registration and Discovery |

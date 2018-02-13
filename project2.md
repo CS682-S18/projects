@@ -43,7 +43,7 @@ message ZKData {
 
 ### Messaging
 
-Recall that UDP is *connectionless*. This means that you will use **one** UDP socket on each host, and this socket will be used for *both sending a receiving messages*.
+Recall that UDP is *connectionless*. This means that you will use **one** UDP socket on each host, and this socket will be used for *both sending and receiving messages*.
 
 A host may concurrently be acting as a receiver, for a download request it initiated, or a sender, for one or more requests it has received. Each time a new packet is received you will perform a demultiplexing operation to determine how to handle the incoming packet.
 
@@ -125,7 +125,7 @@ on ACK received
 ### Application Execution
 
 - Your main method must be in a class `cs682.Chat`. 
-- Your program will take two command line arguments:
+- Your program will take three command line arguments:
   * `-user <username>` - The username that will be used for your client.
   * `-port <port>` - The port on which your server will listen.
   * `-udpport <port>` - The UDP port on which your download service will listen.

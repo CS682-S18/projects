@@ -161,7 +161,13 @@ For full credit, make sure to follow all [Style Guidelines](https://github.com/C
 | 10 | UI | 
 | 10 | Style | 
 | 10 | Runs correctly |
-| 15 | Demonstration |
+| 15 | Demonstration  |
+|  | [5] - Your solution running on two nodes without failure.  |
+|  | [5] - Your solution running on two nodes with the following two failure scenarios: (1) Lost DATA packet; (2) Lost ACK packet.  |
+|  | [5] - Your solution with failure scenarios described above downloading from another student's solution.  |
+|  | [5] - Your solution running on two nodes with the failure scenarios Lost REQUEST packet **and** concurrent download and upload.  |
+
+You may earn up to 5 points extra demonstrate credit for this assignment.
 
 Partial credit may be awarded for partial functionality and/or partially correct design or style elements.
 

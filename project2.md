@@ -169,6 +169,8 @@ For full credit, make sure to follow all [Style Guidelines](https://github.com/C
 
 You may earn up to 5 points extra demonstrate credit for this assignment.
 
+You must sign up for a demonstration appointment using [this link](https://calendar.google.com/calendar/selfsched?sstoken=UU1MWWxGQlFmamJYfGRlZmF1bHR8NGRmNmZlODI3ZTdkYzU4YmQ4ZDdiYWM5Yzc0ZWJkZWE).
+
 Partial credit may be awarded for partial functionality and/or partially correct design or style elements.
 
 ### Academic Dishonesty

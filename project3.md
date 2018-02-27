@@ -58,16 +58,16 @@ Responses:
 </details>
 
 <details>
-<summary><pre>POST /events/create</pre></summary>
+<summary><pre>POST /events/create </pre></summary>
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "userid": 0,
   "eventname": "string",
   "numtickets": 0
 }
-<pre><pre><pre>
+```
 
 Responses:
 
@@ -117,11 +117,11 @@ Responses:
 	<summary><pre>POST /users/create</pre></summary>
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "userid": 0,
 }
-<pre><pre><pre>
+```
 
 Responses:
 
@@ -167,13 +167,13 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "eventid": "string",
   "tickets": 0,
   "targetuser": 0
 }
-<pre><pre><pre>
+```
 
 
 Responses:
@@ -192,7 +192,7 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 [
   {
     "eventid": 0,
@@ -201,7 +201,7 @@ Body:
     "purchased": 0
   }
 ]
-<pre><pre><pre>
+```
 
 
 Responses:
@@ -223,13 +223,13 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "userid": 0,
   "eventname": "string",
   "numtickets": 0
 }
-<pre><pre><pre>
+```
 
 
 Responses:
@@ -295,13 +295,13 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "userid": 0,
   "eventid": "string",
   "tickets": 0
 }
-<pre><pre><pre>
+```
 
 Responses:
 
@@ -322,11 +322,11 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "userid": 0,
 }
-<pre><pre><pre>
+```
 
 Responses:
 
@@ -376,12 +376,12 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "eventid": "string",
   "tickets": 0
 }
-<pre><pre><pre>
+```
 
 
 Responses:
@@ -400,13 +400,13 @@ Responses:
 
 Body:
 
-<pre><pre><pre>json
+```json
 {
   "eventid": "string",
   "tickets": 0,
   "targetuser": 0
 }
-<pre><pre><pre>
+```
 
 
 Responses:

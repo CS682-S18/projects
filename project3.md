@@ -166,7 +166,7 @@ Responses:
 
 </table>
 
-</detail>
+</details>
 
 
 

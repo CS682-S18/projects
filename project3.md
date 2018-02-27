@@ -33,7 +33,7 @@ Students who choose to work in teams *may* work together on the implementation o
 #### Front End Service
 
 <details>
-<summary><pre>GET /events</pre></summary>
+<summary>GET /events</summary>
 
 
 Responses:
@@ -58,7 +58,7 @@ Responses:
 </details>
 
 <details>
-<summary><pre>POST /events/create </pre></summary>
+<summary>POST /events/create </summary>
 Body:
 
 ```json
@@ -78,7 +78,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /events/{eventid}</pre></summary>
+	<summary>GET /events/{eventid}</summary>
 
 Responses:
 
@@ -100,7 +100,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /events/{eventid}/purchase</pre></summary>
+	<summary>GET /events/{eventid}/purchase</summary>
 
 Responses:
 
@@ -114,7 +114,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>POST /users/create</pre></summary>
+	<summary>POST /users/create</summary>
 Body:
 
 ```json
@@ -138,7 +138,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /users/{userid}</pre></summary>
+	<summary>GET /users/{userid}</summary>
 
 Responses:
 
@@ -163,7 +163,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>POST /users/{userid}/tickets/transfer</pre></summary>
+	<summary>POST /users/{userid}/tickets/transfer</summary>
 
 Body:
 
@@ -188,7 +188,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /users/{userid}/events</pre></summary>
+	<summary>GET /users/{userid}/events</summary>
 
 Body:
 
@@ -219,7 +219,7 @@ Responses:
 #### Event Service
 
 <details>
-	<summary><pre>POST /create</pre></summary>
+	<summary>POST /create</summary>
 
 Body:
 
@@ -244,7 +244,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /list</pre></summary>
+	<summary>GET /list</summary>
 
 Responses:
 
@@ -268,7 +268,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /{eventid}</pre></summary>
+	<summary>GET /{eventid}</summary>
 
 Responses:
 
@@ -291,7 +291,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>POST /purchase/{eventid}</pre></summary>
+	<summary>POST /purchase/{eventid}</summary>
 
 Body:
 
@@ -318,7 +318,7 @@ Responses:
 #### User Service
 
 <details>
-	<summary><pre>POST /create</pre></summary>
+	<summary>POST /create</summary>
 
 Body:
 
@@ -346,7 +346,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /{userid}</pre></summary>
+	<summary>GET /{userid}</summary>
 
 Responses:
 
@@ -372,7 +372,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>GET /{userid}/tickets/add</pre></summary>
+	<summary>GET /{userid}/tickets/add</summary>
 
 Body:
 
@@ -396,7 +396,7 @@ Responses:
 </details>
 
 <details>
-	<summary><pre>POST /{userid}/tickets/transfer</pre></summary>
+	<summary>POST /{userid}/tickets/transfer</summary>
 
 Body:
 

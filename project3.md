@@ -33,7 +33,7 @@ Students who choose to work in teams *may* work together on the implementation o
 #### Front End Service
 
 <details>
-<summary>`GET /events`</summary>
+<summary><pre>GET /events</pre></summary>
 
 
 Responses:
@@ -58,16 +58,16 @@ Responses:
 </details>
 
 <details>
-<summary>`POST /events/create`</summary>
+<summary><pre>POST /events/create</pre></summary>
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "userid": 0,
   "eventname": "string",
   "numtickets": 0
 }
-```
+<pre><pre><pre>
 
 Responses:
 
@@ -78,7 +78,7 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /events/{eventid}`</summary>
+	<summary><pre>GET /events/{eventid}</pre></summary>
 
 Responses:
 
@@ -100,7 +100,7 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /events/{eventid}/purchase`</summary>
+	<summary><pre>GET /events/{eventid}/purchase</pre></summary>
 
 Responses:
 
@@ -114,14 +114,14 @@ Responses:
 </details>
 
 <details>
-	<summary>`POST /users/create`</summary>
+	<summary><pre>POST /users/create</pre></summary>
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "userid": 0,
 }
-```
+<pre><pre><pre>
 
 Responses:
 
@@ -138,7 +138,7 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /users/{userid}`</summary>
+	<summary><pre>GET /users/{userid}</pre></summary>
 
 Responses:
 
@@ -163,17 +163,17 @@ Responses:
 </details>
 
 <details>
-	<summary>`POST /users/{userid}/tickets/transfer`</summary>
+	<summary><pre>POST /users/{userid}/tickets/transfer</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "eventid": "string",
   "tickets": 0,
   "targetuser": 0
 }
-```
+<pre><pre><pre>
 
 
 Responses:
@@ -188,11 +188,11 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /users/{userid}/events`</summary>
+	<summary><pre>GET /users/{userid}/events</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 [
   {
     "eventid": 0,
@@ -201,7 +201,7 @@ Body:
     "purchased": 0
   }
 ]
-```
+<pre><pre><pre>
 
 
 Responses:
@@ -219,17 +219,17 @@ Responses:
 #### Event Service
 
 <details>
-	<summary>`POST /create`</summary>
+	<summary><pre>POST /create</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "userid": 0,
   "eventname": "string",
   "numtickets": 0
 }
-```
+<pre><pre><pre>
 
 
 Responses:
@@ -244,7 +244,7 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /list`</summary>
+	<summary><pre>GET /list</pre></summary>
 
 Responses:
 
@@ -268,7 +268,7 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /{eventid}`</summary>
+	<summary><pre>GET /{eventid}</pre></summary>
 
 Responses:
 
@@ -291,17 +291,17 @@ Responses:
 </details>
 
 <details>
-	<summary>`POST /purchase/{eventid}`</summary>
+	<summary><pre>POST /purchase/{eventid}</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "userid": 0,
   "eventid": "string",
   "tickets": 0
 }
-```
+<pre><pre><pre>
 
 Responses:
 
@@ -318,15 +318,15 @@ Responses:
 #### User Service
 
 <details>
-	<summary>`POST /create`</summary>
+	<summary><pre>POST /create</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "userid": 0,
 }
-```
+<pre><pre><pre>
 
 Responses:
 
@@ -346,7 +346,7 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /{userid}`</summary>
+	<summary><pre>GET /{userid}</pre></summary>
 
 Responses:
 
@@ -372,16 +372,16 @@ Responses:
 </details>
 
 <details>
-	<summary>`GET /{userid}/tickets/add`</summary>
+	<summary><pre>GET /{userid}/tickets/add</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "eventid": "string",
   "tickets": 0
 }
-```
+<pre><pre><pre>
 
 
 Responses:
@@ -396,17 +396,17 @@ Responses:
 </details>
 
 <details>
-	<summary>`POST /{userid}/tickets/transfer`</summary>
+	<summary><pre>POST /{userid}/tickets/transfer</pre></summary>
 
 Body:
 
-```json
+<pre><pre><pre>json
 {
   "eventid": "string",
   "tickets": 0,
   "targetuser": 0
 }
-```
+<pre><pre><pre>
 
 
 Responses:
@@ -428,7 +428,7 @@ Responses:
 
 ### Submission Requirements
 
-By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment. 
+By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment. <pre>
 
 Use the following link to create your private github repository for this assignment: [Project 3]()
 

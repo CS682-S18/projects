@@ -14,11 +14,11 @@ The architecture of the web application will be as follows:
 
 ![architecture](https://docs.google.com/drawings/d/e/2PACX-1vTjBg_ZETz31hzGUrNL6Fh6GoSEUA9iWLSwyLnPdY0Ixg0YuHhVliwo4fJvfUhFp8mXIxz1dOHMZHw1/pub?w=960&h=720)
 
-**Web Front End** - The web front end will implement an external web service API for the application and will support operations including creating users, viewing events, and purchasing tickets.
+**Web Front End** - The web front end will implement an external web service API for the application and will support operations including creating users, viewing events, and purchasing tickets. 
 
-**Event Service** - The event service will manage the list of events and the number of tickets sold and available for each.
+**Event Service** - The event service will manage the list of events and the number of tickets sold and available for each. When a ticket is purchased it is the responsibility of the Event Service to notify the User Service of the user's purchase.
 
-**User Service** - The user service will manage the user account information, including the events for which a user has purchased tickets.
+**User Service** - The user service will manage the user account information, including the events for which a user has purchased tickets. 
 
 ### Logistics (read carefully!)
 
@@ -42,23 +42,14 @@ Responses:
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
 	<pre>
-{
-  "events": [
+[
 	{
 	 	"eventid": 0, 
-	 	"eventname": 	"string", 
+	 	"eventname": "string", 
 	 	"avail": 0, 
 	 	"purchased": 0
-	},
-		{
-	 	"eventid": 2, 
-	 	"eventname": 	"string", 
-	 	"avail": 0, 
-	 	"purchased": 0
-	}
- 
-  ]
-}
+	} 
+]
 	</pre></td></tr>
 	<tr><td>400</td><td>No events found</td></tr>
 
@@ -128,7 +119,7 @@ Body:
 
 ```json
 {
-  "username": "string",
+  "userid": 0,
 }
 ```
 
@@ -136,7 +127,10 @@ Responses:
 
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
-	<tr><td>200</td><td>User created</td></tr>
+	<tr><td>200</td><td>User created<br/>
+	<pre>
+	
+	</pre></td></tr>
 	<tr><td>400</td><td>User could not be created</td></tr>
 
 </table>
@@ -168,22 +162,273 @@ Responses:
 
 </details>
 
+<details>
+	<summary>`POST /users/{userid}/tickets/transfer`</summary>
 
+Body:
+
+```json
+{
+  "eventid": "string",
+  "tickets": 0,
+  "targetuser": 0
+}
+```
+
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event tickets transferred</td></tr>
+	<tr><td>400</td><td>Tickets could not be transferred</td></tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`GET /users/{userid}/events`</summary>
+
+Body:
+
+```json
+[
+  {
+    "eventid": 0,
+    "eventname": "string",
+    "avail": 0,
+    "purchased": 0
+  }
+]
+```
+
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>User's events</td></tr>
+	<tr><td>400</td><td>User not found</td></tr>
+
+</table>
+
+</details>
+
+
+#### Event Service
+
+<details>
+	<summary>`POST /create`</summary>
+
+Body:
+
+```json
+{
+  "userid": 0,
+  "eventname": "string",
+  "numtickets": 0
+}
+```
+
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event created</td></tr>
+	<tr><td>400</td><td>Event unsuccessfully created</td></tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`GET /list`</summary>
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>List of events <br/>
+	<pre>
+[
+  {
+    "eventid": 0,
+    "name": "string",
+    "avail": 0,
+    "purchased": 0
+  }
+]	
+	</pre>
+	</td></tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`GET /{eventid}`</summary>
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event details<br/>
+	<pre>
+{
+    "eventid": 0,
+    "name": "string",
+    "avail": 0,
+    "purchased": 0
+}
+	</pre>
+	</tr>
+	<tr><td>400</td><td>Event not found</tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`POST /purchase/{eventid}`</summary>
+
+Body:
+
+```json
+{
+  "userid": 0,
+  "eventid": "string",
+  "tickets": 0
+}
+```
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event tickets purchased</tr>
+	<tr><td>400</td><td>Tickets could not be purchased</tr>
+
+</table>
+
+</details>
+
+
+#### User Service
+
+<details>
+	<summary>`POST /create`</summary>
+
+Body:
+
+```json
+{
+  "userid": 0,
+}
+```
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>User created<br/>
+	<pre>
+{
+  "userid": 0
+}	
+	</pre>
+	</tr>
+	<tr><td>400</td><td>User unsuccessfully created</tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`GET /{userid}`</summary>
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>User details<br/>
+	<pre>
+{
+  "userid": 0,
+  "username": "string",
+  "tickets": [
+    {
+      "eventid": 0
+    }
+  ]
+}
+	</pre>
+	</tr>
+	<tr><td>400</td><td>User not found</tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`GET /{userid}/tickets/add`</summary>
+
+Body:
+
+```json
+{
+  "eventid": "string",
+  "tickets": 0
+}
+```
+
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event tickets added</tr>
+	<tr><td>400</td><td>Tickets could not be added</tr>
+
+</table>
+
+</details>
+
+<details>
+	<summary>`POST /{userid}/tickets/transfer`</summary>
+
+Body:
+
+```json
+{
+  "eventid": "string",
+  "tickets": 0,
+  "targetuser": 0
+}
+```
+
+
+Responses:
+
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event tickets transfered</tr>
+	<tr><td>400</td><td>Tickets could not be transfered</tr>
+
+</table>
+
+</details>
 
 ### Requirements
 
 1. If you wish to use a web framework other than Servlets/Jetty you must first seek approval from the instructor.
-2. 
-
+2. You will design a thread-safe data structure to store data maintained your service. It is *not* required that you make the data persistent.
 
 
 ### Submission Requirements
 
-There will be two deadlines for this assignment.
-
-By **Thursday, Feb 22** at the *beginning* of class you must be prepared to demonstrate your working solution on the CS microcloud. When testing or running during demonstration please use only your [assigned microcloud node(s) and port(s)](https://github.com/CS682-S18/notes/blob/master/microcloud.md). For full demonstration credit your solution must be completely interoperable with the correct solution and the solution of any other student who also has a correct solution.
-
-By **Friday, Feb 23** at 5PM you must submit all code and a jar file to your github repository for this assignment. Your jar file *must* be in a `lib` directory under your top-level repo directory and it *must* be named `project2.jar`. 
+By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment. 
 
 Use the following link to create your private github repository for this assignment: [Project 3]()
 

@@ -2,7 +2,6 @@ Project 3 - Service-Oriented Ticket Purchase Application
 ========================================================
 *This project specification is incomplete and will change! Proceed at your own risk.*
 
-
 ### Code Due - TBD
 ### Deployment Due - TBD
 
@@ -14,7 +13,14 @@ The architecture of the web application will be as follows:
 
 ![architecture](https://docs.google.com/drawings/d/e/2PACX-1vTjBg_ZETz31hzGUrNL6Fh6GoSEUA9iWLSwyLnPdY0Ixg0YuHhVliwo4fJvfUhFp8mXIxz1dOHMZHw1/pub?w=960&h=720)
 
-**Web Front End** - The web front end will implement an external web service API for the application and will support operations including creating users, viewing events, and purchasing tickets. 
+**Web Front End** - The web front end will implement an external web service API for the application and will support APIs for the following operations:
+1. Get all events
+2. Create a new event
+3. Get details about a specific event
+4. Purchase tickets for an event
+5. Create a user
+6. See a user's information, including *details* of all events for which the user has purchased tickets
+7. Transfer tickets from one user to another
 
 **Event Service** - The event service will manage the list of events and the number of tickets sold and available for each. When a ticket is purchased it is the responsibility of the Event Service to notify the User Service of the user's purchase.
 
@@ -33,64 +39,64 @@ Students who choose to work in teams *may* work together on the implementation o
 #### Front End Service
 
 <details>
-<summary>GET /events</summary>
+	<summary>GET /events</summary>
 
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
 	<pre>
-[
+	[
 	{
-	 	"eventid": 0, 
-	 	"eventname": "string", 
-	 	"avail": 0, 
-	 	"purchased": 0
+		"eventid": 0, 
+		"eventname": "string", 
+		"avail": 0, 
+		"purchased": 0
 	} 
-]
+	]
 	</pre></td></tr>
 	<tr><td>400</td><td>No events found</td></tr>
 
-</table>
+	</table>
 
 </details>
 
 <details>
-<summary>POST /events/create </summary>
-Body:
+	<summary>POST /events/create </summary>
+	Body:
 
-```json
-{
-  "userid": 0,
-  "eventname": "string",
-  "numtickets": 0
-}
-```
+	<pre>
+	{
+		"userid": 0,
+		"eventname": "string",
+		"numtickets": 0
+	}
+	</pre>
 
-Responses:
+	Responses:
 
-| Code | Description |
-| ----| -----|
-| 200 | Event created |
-| 400 | Event unsuccessfully created |
+	| Code | Description |
+	| ----| -----|
+	| 200 | Event created |
+	| 400 | Event unsuccessfully created |
 </details>
 
 <details>
 	<summary>GET /events/{eventid}</summary>
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
 	<pre>
 	{
-	 	"eventid": 0, 
-	 	"eventname": "string", 
-	 	"avail": 0, 
-	 	"purchased": 0
+		"eventid": 0, 
+		"eventname": "string", 
+		"avail": 0, 
+		"purchased": 0
 	}
 	</pre></td></tr>
 	<tr><td>400</td><td>Event not found</td></tr>
@@ -100,11 +106,11 @@ Responses:
 </details>
 
 <details>
-	<summary>GET /events/{eventid}/purchase</summary>
+	<summary>GET /events/{eventid}/purchase/{userid}</summary>
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Tickets purchased</td></tr>
 	<tr><td>400</td><td>Tickets could not be purchased</td></tr>
@@ -115,17 +121,17 @@ Responses:
 
 <details>
 	<summary>POST /users/create</summary>
-Body:
+	Body:
 
-```json
-{
-  "userid": 0,
-}
-```
+	```json
+	{
+		"userid": 0,
+	}
+	```
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User created<br/>
 	<pre>
@@ -140,21 +146,24 @@ Responses:
 <details>
 	<summary>GET /users/{userid}</summary>
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User Details<br/>
 	<pre>
-{
-  "userid": 0,
-  "username": "string",
-  "tickets": [
-    {
-      "eventid": 0
-    }
-  ]
-}
+	{
+		"userid": 0,
+		"username": "string",
+		"tickets": [
+			{
+				"eventid": 0,
+				"eventname": "string",
+				"avail": 0,
+				"purchased": 0
+			}
+		]	
+	}
 	</pre></td></tr>
 	<tr><td>400</td><td>User not found</td></tr>
 
@@ -165,51 +174,23 @@ Responses:
 <details>
 	<summary>POST /users/{userid}/tickets/transfer</summary>
 
-Body:
+	Body:
 
-```json
-{
-  "eventid": "string",
-  "tickets": 0,
-  "targetuser": 0
-}
-```
+	```json
+	{
+		"eventid": "string",
+		"tickets": 0,
+		"targetuser": 0
+	}
+	```
 
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets transferred</td></tr>
 	<tr><td>400</td><td>Tickets could not be transferred</td></tr>
-
-</table>
-
-</details>
-
-<details>
-	<summary>GET /users/{userid}/events</summary>
-
-Body:
-
-```json
-[
-  {
-    "eventid": 0,
-    "eventname": "string",
-    "avail": 0,
-    "purchased": 0
-  }
-]
-```
-
-
-Responses:
-
-<table>
-	<tr><td>Code</td><td>Description</td></tr>
-	<tr><td>200</td><td>User's events</td></tr>
-	<tr><td>400</td><td>User not found</td></tr>
 
 </table>
 
@@ -221,20 +202,20 @@ Responses:
 <details>
 	<summary>POST /create</summary>
 
-Body:
+	Body:
 
-```json
-{
-  "userid": 0,
-  "eventname": "string",
-  "numtickets": 0
-}
-```
+	```json
+	{
+		"userid": 0,
+		"eventname": "string",
+		"numtickets": 0
+	}
+	```
 
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event created</td></tr>
 	<tr><td>400</td><td>Event unsuccessfully created</td></tr>
@@ -246,20 +227,20 @@ Responses:
 <details>
 	<summary>GET /list</summary>
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>List of events <br/>
 	<pre>
-[
-  {
-    "eventid": 0,
-    "name": "string",
-    "avail": 0,
-    "purchased": 0
-  }
-]	
+	[
+	{
+		"eventid": 0,
+		"name": "string",
+		"avail": 0,
+		"purchased": 0
+	}
+	]	
 	</pre>
 	</td></tr>
 
@@ -270,18 +251,18 @@ Responses:
 <details>
 	<summary>GET /{eventid}</summary>
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event details<br/>
 	<pre>
-{
-    "eventid": 0,
-    "name": "string",
-    "avail": 0,
-    "purchased": 0
-}
+	{
+		"eventid": 0,
+		"name": "string",
+		"avail": 0,
+		"purchased": 0
+	}
 	</pre>
 	</tr>
 	<tr><td>400</td><td>Event not found</tr>
@@ -293,19 +274,19 @@ Responses:
 <details>
 	<summary>POST /purchase/{eventid}</summary>
 
-Body:
+	Body:
 
-```json
-{
-  "userid": 0,
-  "eventid": "string",
-  "tickets": 0
-}
-```
+	```json
+	{
+		"userid": 0,
+		"eventid": "string",
+		"tickets": 0
+	}
+	```
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets purchased</tr>
 	<tr><td>400</td><td>Tickets could not be purchased</tr>
@@ -320,23 +301,23 @@ Responses:
 <details>
 	<summary>POST /create</summary>
 
-Body:
+	Body:
 
-```json
-{
-  "userid": 0,
-}
-```
+	```json
+	{
+		"username": "string",
+	}
+	```
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User created<br/>
 	<pre>
-{
-  "userid": 0
-}	
+	{
+		"userid": 0
+	}	
 	</pre>
 	</tr>
 	<tr><td>400</td><td>User unsuccessfully created</tr>
@@ -348,21 +329,21 @@ Responses:
 <details>
 	<summary>GET /{userid}</summary>
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User details<br/>
 	<pre>
-{
-  "userid": 0,
-  "username": "string",
-  "tickets": [
-    {
-      "eventid": 0
-    }
-  ]
-}
+	{
+		"userid": 0,
+		"username": "string",
+		"tickets": [
+		{
+			"eventid": 0
+		}
+		]
+	}
 	</pre>
 	</tr>
 	<tr><td>400</td><td>User not found</tr>
@@ -372,21 +353,21 @@ Responses:
 </details>
 
 <details>
-	<summary>GET /{userid}/tickets/add</summary>
+	<summary>POST /{userid}/tickets/add</summary>
 
-Body:
+	Body:
 
-```json
-{
-  "eventid": "string",
-  "tickets": 0
-}
-```
+	```json
+	{
+		"eventid": "string",
+		"tickets": 0
+	}
+	```
 
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets added</tr>
 	<tr><td>400</td><td>Tickets could not be added</tr>
@@ -398,20 +379,20 @@ Responses:
 <details>
 	<summary>POST /{userid}/tickets/transfer</summary>
 
-Body:
+	Body:
 
-```json
-{
-  "eventid": "string",
-  "tickets": 0,
-  "targetuser": 0
-}
-```
+	```json
+	{
+		"eventid": "string",
+		"tickets": 0,
+		"targetuser": 0
+	}
+	```
 
 
-Responses:
+	Responses:
 
-<table>
+	<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets transfered</tr>
 	<tr><td>400</td><td>Tickets could not be transfered</tr>

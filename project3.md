@@ -117,13 +117,14 @@ Responses:
 
 <details>
 <summary>POST /users/create</summary>
+
 Body:
 
-	<pre>
-	{
-		"username": "string",
-	}
-	</pre>
+<pre>
+{
+	"username": "string",
+}
+</pre>
 
 Responses:
 

@@ -39,33 +39,32 @@ Students who choose to work in teams *may* work together on the implementation o
 #### Front End Service
 
 <details>
-	<summary>GET /events</summary>
+<summary>GET /events</summary>
 
+Responses:
 
-	Responses:
-
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
-	<pre>
-	[
-	{
-		"eventid": 0, 
-		"eventname": "string", 
-		"avail": 0, 
-		"purchased": 0
-	} 
-	]
-	</pre></td></tr>
+		<pre>
+		[
+		{
+			"eventid": 0, 
+			"eventname": "string", 
+			"avail": 0, 
+			"purchased": 0
+		} 
+		]
+		</pre></td></tr>
 	<tr><td>400</td><td>No events found</td></tr>
-
-	</table>
-
+</table>
 </details>
 
+
 <details>
-	<summary>POST /events/create </summary>
-	Body:
+<summary>POST /events/create </summary>
+	
+Body:
 
 	<pre>
 	{
@@ -77,10 +76,11 @@ Students who choose to work in teams *may* work together on the implementation o
 
 	Responses:
 
-	| Code | Description |
-	| ----| -----|
-	| 200 | Event created |
-	| 400 | Event unsuccessfully created |
+<table>
+	<tr><td>Code</td><td>Description</td></tr>
+	<tr><td>200</td><td>Event created</tr>
+	<tr><td>400</td><td>Event unsuccessfully created</td></tr>
+</table>
 </details>
 
 <details>
@@ -102,53 +102,50 @@ Students who choose to work in teams *may* work together on the implementation o
 	<tr><td>400</td><td>Event not found</td></tr>
 
 </table>
-
 </details>
 
 <details>
-	<summary>GET /events/{eventid}/purchase/{userid}</summary>
+<summary>GET /events/{eventid}/purchase/{userid}</summary>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Tickets purchased</td></tr>
 	<tr><td>400</td><td>Tickets could not be purchased</td></tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>POST /users/create</summary>
-	Body:
+<summary>POST /users/create</summary>
+Body:
 
-	```json
+	<pre>
 	{
-		"userid": 0,
+		"username": "string",
 	}
-	```
+	</pre>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User created<br/>
 	<pre>
-	
+{
+	"userid": 0,
+}	
 	</pre></td></tr>
 	<tr><td>400</td><td>User could not be created</td></tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>GET /users/{userid}</summary>
+<summary>GET /users/{userid}</summary>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User Details<br/>
 	<pre>
@@ -166,32 +163,27 @@ Students who choose to work in teams *may* work together on the implementation o
 	}
 	</pre></td></tr>
 	<tr><td>400</td><td>User not found</td></tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>POST /users/{userid}/tickets/transfer</summary>
+<summary>POST /users/{userid}/tickets/transfer</summary>
 
-	Body:
+Body:
+<pre>
+{
+	"eventid": "string",
+	"tickets": 0,
+	"targetuser": 0
+}
+</pre>
 
-	```json
-	{
-		"eventid": "string",
-		"tickets": 0,
-		"targetuser": 0
-	}
-	```
+Responses:
 
-
-	Responses:
-
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets transferred</td></tr>
 	<tr><td>400</td><td>Tickets could not be transferred</td></tr>
-
 </table>
 
 </details>
@@ -200,60 +192,56 @@ Students who choose to work in teams *may* work together on the implementation o
 #### Event Service
 
 <details>
-	<summary>POST /create</summary>
+<summary>POST /create</summary>
 
-	Body:
+Body:
 
-	```json
-	{
-		"userid": 0,
-		"eventname": "string",
-		"numtickets": 0
-	}
-	```
+<pre>
+{
+	"userid": 0,
+	"eventname": "string",
+	"numtickets": 0
+}
+</pre>
 
+Responses:
 
-	Responses:
-
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event created</td></tr>
 	<tr><td>400</td><td>Event unsuccessfully created</td></tr>
 
 </table>
-
 </details>
 
 <details>
-	<summary>GET /list</summary>
+<summary>GET /list</summary>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>List of events <br/>
-	<pre>
-	[
+<pre>
+[
 	{
 		"eventid": 0,
 		"name": "string",
 		"avail": 0,
 		"purchased": 0
 	}
-	]	
-	</pre>
+]	
+</pre>
 	</td></tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>GET /{eventid}</summary>
+<summary>GET /{eventid}</summary>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event details<br/>
 	<pre>
@@ -266,31 +254,28 @@ Students who choose to work in teams *may* work together on the implementation o
 	</pre>
 	</tr>
 	<tr><td>400</td><td>Event not found</tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>POST /purchase/{eventid}</summary>
+<summary>POST /purchase/{eventid}</summary>
 
-	Body:
+Body:
 
-	```json
-	{
-		"userid": 0,
-		"eventid": "string",
-		"tickets": 0
-	}
-	```
+<pre>
+{
+	"userid": 0,
+	"eventid": "string",
+	"tickets": 0
+}
+</pre>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets purchased</tr>
 	<tr><td>400</td><td>Tickets could not be purchased</tr>
-
 </table>
 
 </details>
@@ -299,19 +284,19 @@ Students who choose to work in teams *may* work together on the implementation o
 #### User Service
 
 <details>
-	<summary>POST /create</summary>
+<summary>POST /create</summary>
 
-	Body:
+Body:
 
-	```json
-	{
-		"username": "string",
-	}
-	```
+<pre>
+{
+	"username": "string",
+}
+</pre>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User created<br/>
 	<pre>
@@ -321,17 +306,15 @@ Students who choose to work in teams *may* work together on the implementation o
 	</pre>
 	</tr>
 	<tr><td>400</td><td>User unsuccessfully created</tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>GET /{userid}</summary>
+<summary>GET /{userid}</summary>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User details<br/>
 	<pre>
@@ -342,61 +325,55 @@ Students who choose to work in teams *may* work together on the implementation o
 		{
 			"eventid": 0
 		}
-		]
+	]
 	}
 	</pre>
 	</tr>
 	<tr><td>400</td><td>User not found</tr>
-
 </table>
-
 </details>
 
 <details>
-	<summary>POST /{userid}/tickets/add</summary>
+<summary>POST /{userid}/tickets/add</summary>
 
-	Body:
+Body:
 
-	```json
-	{
-		"eventid": "string",
-		"tickets": 0
-	}
-	```
+<pre>
+{
+	"eventid": "string",
+	"tickets": 0
+}
+</pre>
 
+Responses:
 
-	Responses:
-
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets added</tr>
 	<tr><td>400</td><td>Tickets could not be added</tr>
 
 </table>
-
 </details>
 
 <details>
-	<summary>POST /{userid}/tickets/transfer</summary>
+<summary>POST /{userid}/tickets/transfer</summary>
 
-	Body:
+Body:
 
-	```json
-	{
-		"eventid": "string",
-		"tickets": 0,
-		"targetuser": 0
-	}
-	```
+<pre>
+{
+	"eventid": "string",
+	"tickets": 0,
+	"targetuser": 0
+}
+</pre>
 
+Responses:
 
-	Responses:
-
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event tickets transfered</tr>
 	<tr><td>400</td><td>Tickets could not be transfered</tr>
-
 </table>
 
 </details>

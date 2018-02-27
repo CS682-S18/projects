@@ -66,15 +66,15 @@ Responses:
 	
 Body:
 
-	<pre>
-	{
-		"userid": 0,
-		"eventname": "string",
-		"numtickets": 0
-	}
-	</pre>
+<pre>
+{
+	"userid": 0,
+	"eventname": "string",
+	"numtickets": 0
+}
+</pre>
 
-	Responses:
+Responses:
 
 <table>
 	<tr><td>Code</td><td>Description</td></tr>

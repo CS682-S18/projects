@@ -46,15 +46,15 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
-	<pre>
-	[
-		{
-			"eventid": 0, 
-			"eventname": "string", 
-			"avail": 0, 
-			"purchased": 0
-		} 
-	]
+<pre>
+[
+	{
+		"eventid": 0, 
+		"eventname": "string", 
+		"avail": 0, 
+		"purchased": 0
+	} 
+]
 	</pre></td></tr>
 	<tr><td>400</td><td>No events found</td></tr>
 </table>
@@ -91,14 +91,14 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
-	<pre>
-	{
-		"eventid": 0, 
-		"eventname": "string", 
-		"avail": 0, 
-		"purchased": 0
-	}
-	</pre></td></tr>
+<pre>
+{
+	"eventid": 0, 
+	"eventname": "string", 
+	"avail": 0, 
+	"purchased": 0
+}
+</pre></td></tr>
 	<tr><td>400</td><td>Event not found</td></tr>
 </table>
 </details>
@@ -131,11 +131,11 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User created<br/>
-	<pre>
+<pre>
 {
 	"userid": 0,
 }	
-	</pre></td></tr>
+</pre></td></tr>
 	<tr><td>400</td><td>User could not be created</td></tr>
 </table>
 </details>
@@ -148,20 +148,20 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User Details<br/>
-	<pre>
-	{
-		"userid": 0,
-		"username": "string",
-		"tickets": [
-			{
-				"eventid": 0,
-				"eventname": "string",
-				"avail": 0,
-				"purchased": 0
-			}
-		]	
-	}
-	</pre></td></tr>
+<pre>
+{
+	"userid": 0,
+	"username": "string",
+	"tickets": [
+		{
+			"eventid": 0,
+			"eventname": "string",
+			"avail": 0,
+			"purchased": 0
+		}
+	]	
+}
+</pre></td></tr>
 	<tr><td>400</td><td>User not found</td></tr>
 </table>
 </details>
@@ -244,14 +244,14 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event details<br/>
-	<pre>
-	{
-		"eventid": 0,
-		"name": "string",
-		"avail": 0,
-		"purchased": 0
-	}
-	</pre>
+<pre>
+{
+	"eventid": 0,
+	"name": "string",
+	"avail": 0,
+	"purchased": 0
+}
+</pre>
 	</tr>
 	<tr><td>400</td><td>Event not found</tr>
 </table>
@@ -299,13 +299,13 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User created<br/>
-	<pre>
-	{
-		"userid": 0
-	}	
-	</pre>
-	</tr>
-	<tr><td>400</td><td>User unsuccessfully created</tr>
+<pre>
+{
+	"userid": 0
+}	
+</pre>
+</tr>
+<tr><td>400</td><td>User unsuccessfully created</tr>
 </table>
 </details>
 
@@ -317,18 +317,18 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>User details<br/>
-	<pre>
-	{
-		"userid": 0,
-		"username": "string",
-		"tickets": [
+<pre>
+{
+	"userid": 0,
+	"username": "string",
+	"tickets": [
 		{
 			"eventid": 0
 		}
 	]
-	}
-	</pre>
-	</tr>
+}
+</pre>
+</tr>
 	<tr><td>400</td><td>User not found</tr>
 </table>
 </details>

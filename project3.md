@@ -46,16 +46,16 @@ Responses:
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
-		<pre>
-		[
+	<pre>
+	[
 		{
 			"eventid": 0, 
 			"eventname": "string", 
 			"avail": 0, 
 			"purchased": 0
 		} 
-		]
-		</pre></td></tr>
+	]
+	</pre></td></tr>
 	<tr><td>400</td><td>No events found</td></tr>
 </table>
 </details>

@@ -84,11 +84,11 @@ Responses:
 </details>
 
 <details>
-	<summary>GET /events/{eventid}</summary>
+<summary>GET /events/{eventid}</summary>
 
-	Responses:
+Responses:
 
-	<table>
+<table>
 	<tr><td>Code</td><td>Description</td></tr>
 	<tr><td>200</td><td>Event Details<br/>
 	<pre>
@@ -100,7 +100,6 @@ Responses:
 	}
 	</pre></td></tr>
 	<tr><td>400</td><td>Event not found</td></tr>
-
 </table>
 </details>
 

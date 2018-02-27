@@ -428,7 +428,7 @@ Responses:
 
 ### Submission Requirements
 
-By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment. <pre>
+By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment. 
 
 Use the following link to create your private github repository for this assignment: [Project 3]()
 

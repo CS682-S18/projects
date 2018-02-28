@@ -391,6 +391,7 @@ Responses:
 2. You will design a thread-safe data structure to store data maintained your service. It is *not* required that you make the data persistent.
 3. By the deadline you must have your application deployed on the microcloud. Your services (all three components!) must be running at the time your solution is *graded*. See the [guide to running on the microcloud](https://github.com/srollins/software-dev-materials/blob/master/notes/usf_guides/microcloud.md) to ensure that your process is long running.
 4. If you are planning to work in a team you must complete the [team registration form](https://goo.gl/forms/7DAg3uCuFMQsVkef2). Use the following link to create your private github repository for this assignment: [Project 3](https://classroom.github.com/g/KZvuF5Lu) Note that this is a *team* assignment. You will find a video on how to create a team repo here: [Github Classroom Teams](https://www.youtube.com/watch?v=p17s3s2eISw)
+5. There is *no* in-person demonstration requirement for this assignment. 
 
 
 ### Submission Requirements
@@ -401,14 +402,17 @@ Use the following link to create your private github repository for this assignm
 
 For full credit, make sure to follow all [Style Guidelines](https://github.com/CS682-S18/notes/blob/master/style.md). Points will be deducted for each violation.
 
-<!--
 ### Grading Rubric
 
 | Points | Criterion |
 | ------ | -------- |  
+| 10 | Style |  
+| 20 | Code Design |  
+| 40 | Individual Service Functionality |  
+| 30 | Front End Service Functionality |  
 
 Partial credit may be awarded for partial functionality and/or partially correct design or style elements.
--->
+
 ### Academic Dishonesty
 
 Any work you submit is expected to be your own original work. If you use any web resources in developing your code you are strongly advised to cite those resources. The only exception to this rule is code that is posted on the class website. The URL of the resource you used in a comment in your code is fine. If I google even a single line of uncited code and find it on the internet you may get a 0 on the assignment or an F in the class. You may also get a 0 on the assignment or an F in the class if your solution is at all similar to that of any other student.

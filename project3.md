@@ -2,8 +2,7 @@ Project 3 - Service-Oriented Ticket Purchase Application
 ========================================================
 *This project specification is incomplete and will change! Proceed at your own risk.*
 
-### Code Due - TBD
-### Deployment Due - TBD
+### Code and Deployment Due - Friday March 30, 5PM
 
 For this project you will implement a service-oriented version of a ticket purchase service (i.e., your own EventBrite!). 
 
@@ -14,7 +13,7 @@ The architecture of the web application will be as follows:
 ![architecture](https://docs.google.com/drawings/d/e/2PACX-1vTjBg_ZETz31hzGUrNL6Fh6GoSEUA9iWLSwyLnPdY0Ixg0YuHhVliwo4fJvfUhFp8mXIxz1dOHMZHw1/pub?w=960&h=720)
 
 **Web Front End** - The web front end will implement an external web service API for the application and will support APIs for the following operations:
-1. Get all events
+1. Get a list of all events
 2. Create a new event
 3. Get details about a specific event
 4. Purchase tickets for an event
@@ -22,9 +21,17 @@ The architecture of the web application will be as follows:
 6. See a user's information, including *details* of all events for which the user has purchased tickets
 7. Transfer tickets from one user to another
 
-**Event Service** - The event service will manage the list of events and the number of tickets sold and available for each. When a ticket is purchased it is the responsibility of the Event Service to notify the User Service of the user's purchase.
+**Event Service** - The event service will manage the list of events and the number of tickets sold and available for each. When a ticket is purchased it is the responsibility of the Event Service to notify the User Service of the user's purchase. The API will support the following operations:
+1. Create a new event
+2. Get a list of all events
+3. Get details about a specific event
+4. Purchase tickets for an event, updating the user's ticket list
 
-**User Service** - The user service will manage the user account information, including the events for which a user has purchased tickets. 
+**User Service** - The user service will manage the user account information, including the events for which a user has purchased tickets. The API will support the following operations:
+1. Create a new user
+2. Get user details
+3. Add a new ticket for a user
+4. Transfer tickets from one user to another
 
 ### Logistics (read carefully!)
 
@@ -380,26 +387,28 @@ Responses:
 
 ### Requirements
 
-1. If you wish to use a web framework other than Servlets/Jetty you must first seek approval from the instructor.
+1. If you wish to use a web framework other than Servlets/Jetty you must first seek approval from the instructor. You are also welcome to use your own HTTP server as a base for this application.
 2. You will design a thread-safe data structure to store data maintained your service. It is *not* required that you make the data persistent.
+3. By the deadline you must have your application deployed on the microcloud. Your services (all three components!) must be running at the time your solution is *graded*. See the [guide to running on the microcloud](https://github.com/srollins/software-dev-materials/blob/master/notes/usf_guides/microcloud.md) to ensure that your process is long running.
+4. If you are planning to work in a team you must complete the [team registration form](https://goo.gl/forms/7DAg3uCuFMQsVkef2). Use the following link to create your private github repository for this assignment: [Project 3](https://classroom.github.com/g/KZvuF5Lu) Note that this is a *team* assignment. You will find a video on how to create a team repo here: [Github Classroom Teams](https://www.youtube.com/watch?v=p17s3s2eISw)
 
 
 ### Submission Requirements
 
-By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment. 
+By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment **and** your complete solution must be running on the microcloud. Information on which *specific* node/port you must use for each service will be posted soon.
 
-Use the following link to create your private github repository for this assignment: [Project 3]()
+Use the following link to create your private github repository for this assignment: [Project 3](https://classroom.github.com/g/KZvuF5Lu)
 
 For full credit, make sure to follow all [Style Guidelines](https://github.com/CS682-S18/notes/blob/master/style.md). Points will be deducted for each violation.
 
-
+<!--
 ### Grading Rubric
 
 | Points | Criterion |
 | ------ | -------- |  
 
 Partial credit may be awarded for partial functionality and/or partially correct design or style elements.
-
+-->
 ### Academic Dishonesty
 
 Any work you submit is expected to be your own original work. If you use any web resources in developing your code you are strongly advised to cite those resources. The only exception to this rule is code that is posted on the class website. The URL of the resource you used in a comment in your code is fine. If I google even a single line of uncited code and find it on the internet you may get a 0 on the assignment or an F in the class. You may also get a 0 on the assignment or an F in the class if your solution is at all similar to that of any other student.

@@ -1,6 +1,5 @@
 Project 3 - Service-Oriented Ticket Purchase Application
 ========================================================
-*This project specification is incomplete and will change! Proceed at your own risk.*
 
 ### Code and Deployment Due - Friday March 30, 5PM
 
@@ -58,6 +57,7 @@ Responses:
 	{
 		"eventid": 0, 
 		"eventname": "string", 
+		"userid": 0,		
 		"avail": 0, 
 		"purchased": 0
 	} 
@@ -102,6 +102,7 @@ Responses:
 {
 	"eventid": 0, 
 	"eventname": "string", 
+	"userid": 0,		
 	"avail": 0, 
 	"purchased": 0
 }
@@ -111,7 +112,7 @@ Responses:
 </details>
 
 <details>
-<summary>GET /events/{eventid}/purchase/{userid}</summary>
+<summary>POST /events/{eventid}/purchase/{userid}</summary>
 
 Responses:
 
@@ -161,9 +162,10 @@ Responses:
 	"username": "string",
 	"tickets": [
 		{
-			"eventid": 0,
-			"eventname": "string",
-			"avail": 0,
+			"eventid": 0, 
+			"eventname": "string", 
+			"userid": 0,		
+			"avail": 0, 
 			"purchased": 0
 		}
 	]	
@@ -179,7 +181,7 @@ Responses:
 Body:
 <pre>
 {
-	"eventid": "string",
+	"eventid": 0,
 	"tickets": 0,
 	"targetuser": 0
 }
@@ -215,7 +217,12 @@ Responses:
 
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
-	<tr><td>200</td><td>Event created</td></tr>
+	<tr><td>200</td><td>Event created
+<pre>
+{
+	"eventid": 0
+}	
+</pre></td></tr>
 	<tr><td>400</td><td>Event unsuccessfully created</td></tr>
 
 </table>
@@ -232,9 +239,10 @@ Responses:
 <pre>
 [
 	{
-		"eventid": 0,
-		"name": "string",
-		"avail": 0,
+		"eventid": 0, 
+		"eventname": "string", 
+		"userid": 0,		
+		"avail": 0, 
 		"purchased": 0
 	}
 ]	
@@ -253,9 +261,10 @@ Responses:
 	<tr><td>200</td><td>Event details<br/>
 <pre>
 {
-	"eventid": 0,
-	"name": "string",
-	"avail": 0,
+	"eventid": 0, 
+	"eventname": "string", 
+	"userid": 0,		
+	"avail": 0, 
 	"purchased": 0
 }
 </pre>
@@ -272,7 +281,7 @@ Body:
 <pre>
 {
 	"userid": 0,
-	"eventid": "string",
+	"eventid": 0,
 	"tickets": 0
 }
 </pre>
@@ -347,7 +356,7 @@ Body:
 
 <pre>
 {
-	"eventid": "string",
+	"eventid": 0,
 	"tickets": 0
 }
 </pre>
@@ -369,7 +378,7 @@ Body:
 
 <pre>
 {
-	"eventid": "string",
+	"eventid": 0,
 	"tickets": 0,
 	"targetuser": 0
 }
@@ -387,7 +396,7 @@ Responses:
 
 ### Requirements
 
-1. If you wish to use a web framework other than Servlets/Jetty you must first seek approval from the instructor. You are also welcome to use your own HTTP server as a base for this application.
+1. If you wish to use a web framework other than Servlets/Jetty you must first seek approval from the instructor. You are also welcome to use your own HTTP server as a base for this application. Any other third-party libraries must be approved by the instructor.
 2. You will design a thread-safe data structure to store data maintained your service. It is *not* required that you make the data persistent.
 3. By the deadline you must have your application deployed on the microcloud. Your services (all three components!) must be running at the time your solution is *graded*. See the [guide to running on the microcloud](https://github.com/srollins/software-dev-materials/blob/master/notes/usf_guides/microcloud.md) to ensure that your process is long running.
 4. If you are planning to work in a team you must complete the [team registration form](https://goo.gl/forms/7DAg3uCuFMQsVkef2). Use the following link to create your private github repository for this assignment: [Project 3](https://classroom.github.com/g/KZvuF5Lu) Note that this is a *team* assignment. You will find a video on how to create a team repo here: [Github Classroom Teams](https://www.youtube.com/watch?v=p17s3s2eISw)

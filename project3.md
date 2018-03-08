@@ -113,6 +113,14 @@ Responses:
 
 <details>
 <summary>POST /events/{eventid}/purchase/{userid}</summary>
+Body:
+
+<pre>
+{
+	"tickets": 0
+}
+</pre>
+
 
 Responses:
 

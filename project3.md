@@ -85,7 +85,12 @@ Responses:
 
 <table>
 	<tr><td>Code</td><td>Description</td></tr>
-	<tr><td>200</td><td>Event created</tr>
+	<tr><td>200</td><td>Event created
+<pre>
+{
+	"eventid": 0
+}	
+</pre></td></tr>
 	<tr><td>400</td><td>Event unsuccessfully created</td></tr>
 </table>
 </details>

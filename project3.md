@@ -411,14 +411,14 @@ Responses:
 
 1. If you wish to use a web framework other than Servlets/Jetty you must first seek approval from the instructor. You are also welcome to use your own HTTP server as a base for this application. Any other third-party libraries must be approved by the instructor.
 2. You will design a thread-safe data structure to store data maintained your service. It is *not* required that you make the data persistent.
-3. By the deadline you must have your application deployed on the microcloud. Your services (all three components!) must be running at the time your solution is *graded*. See the [guide to running on the microcloud](https://github.com/srollins/software-dev-materials/blob/master/notes/usf_guides/microcloud.md) to ensure that your process is long running.
+3. By the deadline you must have your application deployed on the microcloud on your assigned [node and port](https://github.com/CS682-S18/notes/blob/master/microcloud.md). Your services (all three components!) must be running at the time your solution is *graded*. See the [guide to running on the microcloud](https://github.com/srollins/software-dev-materials/blob/master/notes/usf_guides/microcloud.md) to ensure that your process is long running.
 4. If you are planning to work in a team you must complete the [team registration form](https://goo.gl/forms/7DAg3uCuFMQsVkef2). Use the following link to create your private github repository for this assignment: [Project 3](https://classroom.github.com/g/KZvuF5Lu) Note that this is a *team* assignment. You will find a video on how to create a team repo here: [Github Classroom Teams](https://www.youtube.com/watch?v=p17s3s2eISw)
 5. There is *no* in-person demonstration requirement for this assignment. 
 
 
 ### Submission Requirements
 
-By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment **and** your complete solution must be running on the microcloud. Information on which *specific* node/port you must use for each service will be posted soon.
+By **Friday, March 30** at 5PM you must submit all code to your github repository for this assignment **and** your complete solution must be running on the microcloud. Your solutions must be deployed to your [assigned node and port](https://github.com/CS682-S18/notes/blob/master/microcloud.md).
 
 Use the following link to create your private github repository for this assignment: [Project 3](https://classroom.github.com/g/KZvuF5Lu)
 

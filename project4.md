@@ -1,8 +1,6 @@
 Project 4 - Replication
 ========================================================
 
-*This assignment is incomplete. Proceed at your own risk!*
-
 ### Code and *Demonstration* Due - Monday April 23, 5PM
 
 The goal of this project is to implement a replicated, fault tolerant version of the service you implemented for Project 3. There are two main requirements of your implementation:

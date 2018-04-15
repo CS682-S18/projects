@@ -3,6 +3,8 @@ Project 4 - Replication
 
 ### Code and *Demonstration* Due - Monday April 23, 5PM
 
+### <span style="color:red">Demonstration signup instructions have been posted on Piazza. Sign up now!</span>
+
 The goal of this project is to implement a replicated, fault tolerant version of the service you implemented for Project 3. There are two main requirements of your implementation:
 
 1. **Fault Tolerance** - In a system with N data storage servers, you will tolerate the failure of up to N-1 nodes. As long as one data storage server is available, a client request will succeed.

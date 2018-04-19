@@ -29,7 +29,7 @@ You may, with permission of the instructor, propose a project not on this list.
   - Use the following link to create your private github repository for this assignment: [Project 5]()
   - Commit to your repository a two-paragraph (at least) description of your proposed project. Be as specific as possible, outlining milestones and deliverables.
 
-2. **Checkpoint 1:* Due Tuesday 5/8 - start of class - 15%**
+2. **Checkpoint 1: Due Tuesday 5/8 - start of class - 15%**
   - During class, you will demonstrate your progress. This checkpoint is worth 15% of the final grade of the project, so you will earn no better than 85% if you have not started your project by this checkpoint.
 
 3. **Demonstration: Due Wednesday 5/16 - 5pm - 30%**

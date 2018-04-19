@@ -1,7 +1,7 @@
 Project 5 - Choose your own adventure
 ========================================================
 
-### Proposal Due - Friday April 27, 5PM
+### Proposal Due - Monday April 30, 5PM
 ### Checkpoint 1 Due - Tuesday May 8, start of class
 ### Code and *Demonstration* Due - Wednesday May 16, 5PM
 
@@ -25,18 +25,18 @@ You may, with permission of the instructor, propose a project not on this list.
 
 ### Requirements
 
-1. **Proposal: Due Friday 4/27 - 5pm - 15%**
-  * Use the following link to create your private github repository for this assignment: [Project 5]()
-  * Commit to your repository a two-paragraph (at least) description of your proposed project. Be as specific as possible, outlining milestones and deliverables.
+1. **Proposal: Due Monday 4/30 - 5pm - 15%**
+  - Use the following link to create your private github repository for this assignment: [Project 5]()
+  - Commit to your repository a two-paragraph (at least) description of your proposed project. Be as specific as possible, outlining milestones and deliverables.
 
 2. **Checkpoint 1:* Due Tuesday 5/8 - start of class - 15%**
-  * During class, you will demonstrate your progress. This checkpoint is worth 15% of the final grade of the project, so you will earn no better than 85% if you have not started your project by this checkpoint.
+  - During class, you will demonstrate your progress. This checkpoint is worth 15% of the final grade of the project, so you will earn no better than 85% if you have not started your project by this checkpoint.
 
 3. **Demonstration: Due Wednesday 5/16 - 5pm - 30%**
-  * During finals week you will schedule a 30-minute demonstration of your final project. Demo slots will be filled on a first-come first-served basis, so only about half of you will be able to demo on the last day. Please plan accordingly.
+  - During finals week you will schedule a 30-minute demonstration of your final project. Demo slots will be filled on a first-come first-served basis, so only about half of you will be able to demo on the last day. Please plan accordingly.
 
 4. **Code: Due Wednesday 5/16 - 5pm - 40%**
-  *By the final deadline, all code must be submitted to your github repository.
+  - By the final deadline, all code must be submitted to your github repository.
 
 For full credit, make sure to follow all [Style Guidelines](https://github.com/CS682-S18/notes/blob/master/style.md). Points will be deducted for each violation.
 

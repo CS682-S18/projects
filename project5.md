@@ -26,7 +26,7 @@ You may, with permission of the instructor, propose a project not on this list.
 ### Requirements
 
 1. **Proposal: Due Monday 4/30 - 5pm - 15%**
-  - Use the following link to create your private github repository for this assignment: [Project 5]()
+  - Use the following link to create your private github repository for this assignment: [Project 5](https://classroom.github.com/a/eOYJ6dM1)
   - Commit to your repository a two-paragraph (at least) description of your proposed project. Be as specific as possible, outlining milestones and deliverables.
 
 2. **Checkpoint 1: Due Tuesday 5/8 - start of class - 15%**

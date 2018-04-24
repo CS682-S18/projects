@@ -9,7 +9,7 @@ For this project, you will propose and implement either an extension to Project 
 
 **Requirements Overview:** Your final grade will be based upon (1) your proposal, (2) your progress demonstrated by checkpoint 1, (3) the functionality of your final submission, (4) the design of your final submission, (5) the degree of difficulty of your proposed project, and (6) your final demonstration. Submissions that demonstrate a low level of difficulty and/or few new features will be graded accordingly. Upon reading your proposal I will give you feedback on the level of difficulty of the project.
 
-**Proposal:** By April 27 at 5pm, you will submit a two-paragraph description of your project. This will be submitted as a README.md file in your project-5 github repository. I will review and provide feedback.
+**Proposal:** By April 30 at 5pm, you will submit a two-paragraph description of your project. This will be submitted as a README.md file in your project-5 github repository. I will review and provide feedback.
 
 **Suggestions:** Following are some ideas for Project 5. This is not meant to be an exhaustive list, and is meant to inspire your creativity. Keep in mind that I will expect the amount of work required for Project 5 to exceed that of Project 4. Some of these ideas may be good starting points, but may require a more thorough project to be completed for full credit.
 
